@@ -30,8 +30,8 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 *Example*
 
 ```
-priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git$ cd ..
-priya@LAPTOP-TSTPS35I:/mnt/d$
+/mnt/d/Priyas git$ cd ..
+/mnt/d$
 ```
 ## Project Setup – AutoReports
 
@@ -41,6 +41,7 @@ priya@LAPTOP-TSTPS35I:/mnt/d$
 * This directory contains a mix of files.
 ### Tasks
 * Create a new project folder named AutoReports in your home directory.
+
 *Example*
 
 ```
@@ -54,6 +55,7 @@ AutoReports  priya
     *	src/modules/
     *	output/
     *	logs/
+
 *Example*
 
 ```
@@ -70,6 +72,7 @@ modules  scripts
     * report2.txt
     * report_final.txt
     * Move only the files that start with report and end with .txt to the AutoReports/output/ directory.
+
 *Example*
 
 ```
@@ -85,6 +88,7 @@ priya@LAPTOP-TSTPS35I:/home/AutoReports/output$ ls
 report1.txt  report2.txt  report_final.txt
 ```
 * Inside src/scripts, create a blank file named main.sh and make it executable.
+
 *Example*
 
 ```
@@ -95,6 +99,7 @@ main.sh
 * In the logs directory:
     * Create a file named error.log.
     * Then, create a symbolic link to error.log inside the src/ directory.
+
 *Example*
 
 ```
@@ -115,6 +120,7 @@ error_link  modules  scripts
 
 ```
 * Remove the entire modules directory only if it exists and is empty.
+
 *Example*
 
 ```
@@ -130,7 +136,6 @@ AutoReports  priya
 priya@LAPTOP-TSTPS35I:/home$ cd AutoReports/
 priya@LAPTOP-TSTPS35I:/home/AutoReports$ ls
 logs  output  src
-
 priya@LAPTOP-TSTPS35I:/home/AutoReports/src$ cd ../..
 priya@LAPTOP-TSTPS35I:/home$ sudo rm -rf AutoReports
 priya@LAPTOP-TSTPS35I:/home$ ls
@@ -140,5 +145,3 @@ priya
 ## Output of tree ~/AutoReports
 
 ![alt text](image.png)
-
-
