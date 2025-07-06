@@ -12,10 +12,42 @@ Contains Linux shell commands and details
 *   git add .
 *   git commit -m "our message here"
 *   git push
-* 
-## Change Directory cd 
-### cd -
-* This command will go back to the previous directory path
+
+## Basic Commands (ls, pwd, cd, mkdir, rm, touch)
+
+### uname -a 
+* Operating system version
+### whoami 
+* Username (eg:ubuntu)
+### clear
+* To clear the screen (ctrl+l)
+### history
+* It shows all the command which you works previously
+### sudo
+* Root user permission (super user do)
+### vi (text editor)
+* To insert : press i or insert button
+* To save and quit : esc - shift + semicolon - :wq
+* To quit : esc - shift + semicolon - :q!
+### nano (It is also a text editor)
+
+
+
+### pwd (parent working directory) 
+* (/home/ubuntu)--> home directory
+
+### cd (change directory)
+* cd (without arguments) : This will return you to your home directory. 
+* cd <directory_name> : This will move you into the specified directory. You can use either a relative path (relative to your current directory) or an absolute path (starting from the root directory, /). 
+* cd .. : This moves you up one level in the directory hierarchy (to the parent directory). 
+
+*Example*
+
+```
+/mnt/d/Priyas git$ cd ..
+/mnt/d$
+```
+* cd - : This will take you back to the previously visited directory. 
 
 *Example*
 ```
@@ -24,15 +56,47 @@ priya@LAPTOP-TSTPS35I:~$ cd -
 /mnt/d/Priyas git/data
 priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 ```
-### cd ..
-* This command will go to the previous directory
 
-*Example*
+* cd / : This will take you to the root directory. 
+* cd ~ : This will take you to your home directory, similar to cd alone. 
 
-```
-/mnt/d/Priyas git$ cd ..
-/mnt/d$
-```
+### mkdir (make directory)
+* To create a new directory
+    * mkdir [dir_name]
+* mkdir -p : It is used to create a sub directory even it doesn't exists.
+    * mkdir -p [dir1]/[dir2]/[dir3]
+
+### ls (list)
+* To check the list of files and directory in current folder.
+* ls -lstr
+    * -l : long listing format(permissions,size,etc)
+    * -s : shows file size in blocks(leftmost column)
+    * -t : sorts by modification time(most recent files)
+    * -r : reverse the sorting order
+    * -s : sorts by file(largest to smallest)
+* ls -a : shows hidden files and directory
+
+### touch 
+* To create an empty file or change the timestamp of an existing file.
+    * touch [file_name.txt]
+
+### rm (remove)
+* To remove the file or directory.
+    * rm [file_name or directory_name]
+    * rm *.txt : It will remove all the .txt files.
+    * rm * : To remove all the files.
+
+### cat (concatenate)
+* It is used to read and display the contents of files.
+    * cat [file_name]
+
+### mv (move or rename files)
+* Use the mv command to move files and directories from one directory to another or to rename a file or directory.
+    * mv [options] [source-file] [destination-file]
+        * source_file_name = The name of the files that we want to rename or move.
+        * Destination_file_name = The name of the new location or the name of the file.
+
+
 ## Project Setup – AutoReports
 
 * You are a developer managing a project named AutoReports on a Linux system.
