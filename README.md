@@ -1,20 +1,31 @@
-# Linux
-Contains Linux shell commands and details 
+# Linux Commands
+    This page contains linux shell commands and its details 
 
-## git
-*   go to the repository folder
-*   open terminal and type wsl
-*   To open vs code use this below command
-*   code .
-*   vs code opens here
-*   edit the readme file
-*   save the changes in readme file
-*   git add .
-*   git commit -m "our message here"
-*   git push
+## git commands to push the changes from local (Laptop) to the remote repository (https://github.com/)
+    *   Go to the local repository folder in the laptop.
+    *   Open terminal from that folder and type wsl
+    *   To open vscode use the below command (in smaller case)
+    *   code .
+    *   vscode opens here.
+    *   Edit the files which you need.
+    *   Save the changes in the file.
+    *   git add .   --> This will add all files from current folder to staging area in the local repository
+    *   git commit -m "our message here" --> Push the changes from staging area to local git repository
+    *   git push    --> Genrealy we use (git push origin main), where origin is the remote reposiotry and main is local repository. During git config we already set this up, so simple git push will merger the changes in local to remote
+    *   We can see the details of the git workflow in this image  
+<p align="center">
+    <img width="60%" src="https://business-science.github.io/shiny-production-with-aws-book/img/09_git_cli/git_commands.png">
+</p>
 
-## Basic Commands (ls, pwd, cd, mkdir, rm, touch)
-
+## Basic Commands
+### .   dot means current directory
+### ..  double dot means parent directory
+### man manual availabel in linux
+*Example*
+```
+man cd
+```
+This will show the list of options and details for cd command. Likewise use man for other commands
 ### uname -a 
 * Operating system version
 ### whoami 
@@ -26,20 +37,18 @@ Contains Linux shell commands and details
 ### sudo
 * Root user permission (super user do)
 ### vi (text editor)
+* Command : vi [filename]
 * To insert : press i or insert button
 * To save and quit : esc - shift + semicolon - :wq
 * To quit : esc - shift + semicolon - :q!
 ### nano (It is also a text editor)
-
-
-
+* Command : nano [filename]
 ### pwd (parent working directory) 
-* (/home/ubuntu)--> home directory
-
+* (/home/ubuntu) --> home directory
 ### cd (change directory)
-* cd (without arguments) : This will return you to your home directory. 
-* cd <directory_name> : This will move you into the specified directory. You can use either a relative path (relative to your current directory) or an absolute path (starting from the root directory, /). 
-* cd .. : This moves you up one level in the directory hierarchy (to the parent directory). 
+* cd [without arguments]    : This will return you to your home directory. 
+* cd [directory_name]       : This will move you into the specified directory. You can use either a relative path (relative to your current directory) or an absolute path (starting from the root directory, /). 
+* cd ..                     : This moves you up one level in the directory hierarchy (to the parent directory). 
 
 *Example*
 
@@ -47,7 +56,7 @@ Contains Linux shell commands and details
 /mnt/d/Priyas git$ cd ..
 /mnt/d$
 ```
-* cd - : This will take you back to the previously visited directory. 
+* cd -                      : This will take you back to the previously visited directory. 
 
 *Example*
 ```
@@ -57,8 +66,8 @@ priya@LAPTOP-TSTPS35I:~$ cd -
 priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 ```
 
-* cd / : This will take you to the root directory. 
-* cd ~ : This will take you to your home directory, similar to cd alone. 
+* cd /                      : This will take you to the root directory. 
+* cd ~                      : This will take you to your home directory, similar to cd alone. 
 
 ### mkdir (make directory)
 * To create a new directory
@@ -83,8 +92,8 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 ### rm (remove)
 * To remove the file or directory.
     * rm [file_name or directory_name]
-    * rm *.txt : It will remove all the .txt files.
-    * rm * : To remove all the files.
+    * rm *.txt  : It will remove all the .txt files.
+    * rm *      : To remove all the files.
 
 ### cat (concatenate)
 * It is used to read and display the contents of files.
@@ -96,8 +105,23 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
         * source_file_name = The name of the files that we want to rename or move.
         * Destination_file_name = The name of the new location or the name of the file.
 
+### cp (copy)
+* copies the source file specified by the SourceFile parameter to the destination file specified by the TargetFile parameter.
+    * cp [options] [source] [destination]
 
-## Project Setup – AutoReports
+### echo
+* The echo command in Linux is a built-in command that allows users to display lines of text or strings that are passed as arguments
+    * echo [option] [string]
+
+* [options] = The various options available for modifying the behavior of the `echo` command
+* [string] = It is the string that we want to display.
+
+### >> ( it appends the data of an existing file.)
+### > (operator used for overwriting files that already exist in the directory.)
+
+## Process Management (ps, top, kill, nohup)
+
+## Project Setup – AutoReports (LINUX Course Project)
 
 * You are a developer managing a project named AutoReports on a Linux system.
 * You are currently located in your Downloads directory:
