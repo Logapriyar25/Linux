@@ -18,9 +18,12 @@
 </p>
 
 ## Basic Commands
-### .   dot means current directory
-### ..  double dot means parent directory
-### man manual availabel in linux
+### . (dot)
+* dot means current directory
+### ..  (double dot)
+* double dot means parent directory
+### man 
+* manual availabe in linux
 *Example*
 ```
 man cd
