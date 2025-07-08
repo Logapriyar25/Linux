@@ -1,3 +1,58 @@
+# Linux
+### What is Linux?
+* Linus Torvalds developed Linux, a Unix-like, free, open-source, and kernel operating system. Mainly it is designed for systems, servers, embedded devices, mobile devices, and mainframes and is also supported on major computer platforms such as ARM, x86, and SPARC.
+
+### Explain the basic features of the Linux OS.
+Some basic features of Linux are:
+
+* Linux is free and easily available.
+* It is more secure than other operating systems because it uses security auditing and password authentication features.
+* Linux has its personal software repository.
+* It includes multiple languages throughout the world. Hence Linux supports different language keyboards.
+* It offers CLI and GUI to use different commands and applications such as Firefox, VLC, etc.
+
+### Name some Linux Distros
+There are various Linux distros but the following are the most commonly used:
+
+* Ubuntu
+* Debian
+* CentOS
+* Fedora
+* RedHat
+
+### What is Linux Kernal
+* The Linux kernel is the core of a Linux operating system, acting as a bridge between hardware and software. It manages system resources, handles input/output, and provides a platform for applications to run. Essentially, it's the essential program that allows your computer to function by managing hardware and software interactions. 
+
+### Define the basic components of Linux.
+Majorly there are five basic components of Linux:
+
+* Kernel: Linux kernel is a core part of the operating system that works as a bridge between hardware and software.
+* Shell: Shell is an interface between a kernel and a user.
+* GUI: Offers different way to interact with the system, known as the graphical user interface (GUI).
+* Application programs: It is designed to perform a bundle of tasks through a bundle of functions.
+* System Utilities: It is the software functions through which users manage the system.
+
+### What is Bootloader in Linux
+* In Linux, a bootloader is a program that loads the operating system kernel into memory when the computer starts. It acts as an intermediary between the hardware and the operating system, initializing the system and allowing the user to select which OS or kernel to boot. Common Linux bootloaders include GRUB (GRand Unified Bootloader) and LILO (Linux Loader). 
+
+###  What is Shell in Linux?
+In Linux, five Shells are used:
+
+* csh (C Shell): This shell offers job control and spell checking and is similar to C syntax.
+* ksh (Korn Shell): A high-level shell for programming languages.
+* ssh (Z Shell): This shell has a unique nature, such as closing comments, startup files, file name generating, and observing logout/login watching.
+* bash (Bourne Again Shell): This is the default shell for Linux.
+* Fish (Friendly Interactive Shell): This shell provides auto-suggestion, web-based configuration, etc.
+
+
+### What is a root account?
+* The root is like the user's name or system administrator account in Linux. The root account provides complete system control, which an ordinary user cannot do.
+
+### Describe CLI and GUI in Linux.
+* CLI, i.e., command line interface. It takes input as a command and runs the tasks of the system. 
+The term GUI refers to the Graphical User Interface or the human-computer interface. It uses icons, images, menus, and windows, which can be manipulated through the mouse.
+
+
 # Linux Commands
     This page contains linux shell commands and its details 
 
