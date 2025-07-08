@@ -51,10 +51,7 @@ In Linux, five Shells are used:
 ### Describe CLI and GUI in Linux.
 * CLI, i.e., command line interface. It takes input as a command and runs the tasks of the system. 
 The term GUI refers to the Graphical User Interface or the human-computer interface. It uses icons, images, menus, and windows, which can be manipulated through the mouse.
-
-
-# Linux Commands
-    This page contains linux shell commands and its details 
+ 
 
 ## git commands to push the changes from local (Laptop) to the remote repository (https://github.com/)
     *   Go to the local repository folder in the laptop.
@@ -71,6 +68,9 @@ The term GUI refers to the Graphical User Interface or the human-computer interf
 <p align="center">
     <img width="60%" src="https://business-science.github.io/shiny-production-with-aws-book/img/09_git_cli/git_commands.png">
 </p>
+
+# Linux Commands
+This page contains linux shell commands and its details
 
 ## Basic Commands
 ### . (dot)
