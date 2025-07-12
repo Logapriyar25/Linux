@@ -86,8 +86,18 @@ man cd
 This will show the list of options and details for cd command. Likewise use man for other commands
 ### uname -a 
 * Operating system version
+*Example*
+```
+priya@LAPTOP-TSTPS35I:~$ uname -a
+Linux LAPTOP-TSTPS35I 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+```
 ### whoami 
 * Username (eg:ubuntu)
+*Example*
+```
+priya@LAPTOP-TSTPS35I:~$ whoami
+priya
+```
 ### clear
 * To clear the screen (ctrl+l)
 ### history
@@ -103,9 +113,24 @@ This will show the list of options and details for cd command. Likewise use man 
 * Command : nano [filename]
 ### pwd (parent working directory) 
 * (/home/ubuntu) --> home directory
+*Example*
+```
+priya@LAPTOP-TSTPS35I:~$ pwd
+/home/priya
+```
 ### cd (change directory)
 * cd [without arguments]    : This will return you to your home directory. 
+*Example*
+```
+priya@LAPTOP-TSTPS35I:~$ cd
+priya@LAPTOP-TSTPS35I:~$
+```
 * cd [directory_name]       : This will move you into the specified directory. You can use either a relative path (relative to your current directory) or an absolute path (starting from the root directory, /). 
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/$ cd mnt
+priya@LAPTOP-TSTPS35I:/mnt$
+```
 * cd ..                     : This moves you up one level in the directory hierarchy (to the parent directory). 
 
 *Example*
@@ -125,13 +150,46 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 ```
 
 * cd /                      : This will take you to the root directory. 
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/$ cd mnt
+priya@LAPTOP-TSTPS35I:/mnt$ ls
+c  d  e  home  wsl  wslg
+priya@LAPTOP-TSTPS35I:/mnt$ cd home
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports
+priya@LAPTOP-TSTPS35I:/mnt/home$ cd /
+priya@LAPTOP-TSTPS35I:/$
+
+```
 * cd ~                      : This will take you to your home directory, similar to cd alone. 
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/$ cd ~
+priya@LAPTOP-TSTPS35I:~$
+```
 
 ### mkdir (make directory)
 * To create a new directory
     * mkdir [dir_name]
 * mkdir -p : It is used to create a sub directory even it doesn't exists.
     * mkdir -p [dir1]/[dir2]/[dir3]
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo mkdir Datas
+[sudo] password for priya:
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports  Datas
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo mkdir -p data1/data2/data3
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports  Datas  data1
+priya@LAPTOP-TSTPS35I:/mnt/home$ cd data1
+priya@LAPTOP-TSTPS35I:/mnt/home/data1$ ls
+data2
+priya@LAPTOP-TSTPS35I:/mnt/home/data1$ cd data2
+priya@LAPTOP-TSTPS35I:/mnt/home/data1/data2$ ls
+data3
+```
 
 ### ls (list)
 * To check the list of files and directory in current folder.
@@ -141,31 +199,89 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
     * -t : sorts by modification time(most recent files)
     * -r : reverse the sorting order
     * -s : sorts by file(largest to smallest)
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls -lstr
+total 12
+4 drwxr-xr-x 2 root root 4096 Jul  4 06:00 AutoReports
+4 drwxr-xr-x 2 root root 4096 Jul 12 21:28 Datas
+4 drwxr-xr-x 3 root root 4096 Jul 12 21:30 data1
+```
 * ls -a : shows hidden files and directory
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls -a
+.  ..  AutoReports  Datas  data1
+```
 
 ### touch 
 * To create an empty file or change the timestamp of an existing file.
     * touch [file_name.txt]
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo touch file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports  Datas  data1  file.txt
+```
 
 ### rm (remove)
 * To remove the file or directory.
     * rm [file_name or directory_name]
     * rm *.txt  : It will remove all the .txt files.
     * rm *      : To remove all the files.
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo rm file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports  Datas  data1
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo rm -r Datas/
+priya@LAPTOP-TSTPS35I:/mnt/home$ ls
+AutoReports  data1
+```
 
 ### cat (concatenate)
 * It is used to read and display the contents of files.
     * cat [file_name]
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ vi file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file.txt
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+```
 
 ### mv (move or rename files)
 * Use the mv command to move files and directories from one directory to another or to rename a file or directory.
     * mv [options] [source-file] [destination-file]
         * source_file_name = The name of the files that we want to rename or move.
         * Destination_file_name = The name of the new location or the name of the file.
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo mv file.txt file2.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file2.txt
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file.txt
+cat: file.txt: No such file or directory
+```
 
 ### cp (copy)
 * copies the source file specified by the SourceFile parameter to the destination file specified by the TargetFile parameter.
     * cp [options] [source] [destination]
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo cp file2.txt file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file2.txt
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file.txt
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+```
 
 ### echo
 * The echo command in Linux is a built-in command that allows users to display lines of text or strings that are passed as arguments
@@ -173,9 +289,36 @@ priya@LAPTOP-TSTPS35I:/mnt/d/Priyas git/data$
 
 * [options] = The various options available for modifying the behavior of the `echo` command
 * [string] = It is the string that we want to display.
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ echo "Hello,World!"
+Hello,World!
+```
 
 ### >> ( it appends the data of an existing file.)
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo cat file.txt >> file2.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file2.txt
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+Hello, Good Morning
+Welcome to Linux Training Course
+Have a nice day!
+[or]
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo echo "Hello World" >> file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file.txt
+Hello World
+Hello World
+```
 ### > (operator used for overwriting files that already exist in the directory.)
+*Example*
+```
+priya@LAPTOP-TSTPS35I:/mnt/home$ sudo echo "Hello World" > file.txt
+priya@LAPTOP-TSTPS35I:/mnt/home$ cat file.txt
+Hello World
+```
 
 ## Process Management (ps, top, kill, nohup)
 
