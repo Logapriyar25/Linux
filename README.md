@@ -434,3 +434,135 @@ priya
 ## Output of tree ~/AutoReports
 
 ![alt text](image.png)
+
+## Linux File Permission & User Management Task
+### Task Scenario:
+You are the Linux System Administrator for a development team named AlphaDev. You need to set up a project environment where two users collaborate on specific files and directories securely.
+### Task Question:
+Follow the steps below and apply proper Linux permissions and user management concepts:
+
+1.Create Users and Groups
+* Create two users:
+    * dev1
+    * dev2
+*	Create a group named alphadev
+*	Add both users to the alphadev group
+*Example*
+```
+# To create add users  
+adduser dev1
+adduser dev2
+
+# To create group 
+groupadd alphadev
+
+usermod -aG alphadev dev1
+usermod -aG alphadev dev2
+
+```
+2. Setup Project Directory Structure
+* Create the following directory structure under 
+/opt/project_alpha:
+/opt/project_alpha/
+├── code/
+├── docs/
+└── secure/
+*	Inside /opt/project_alpha/code/, create:
+    *	app.sh
+*	Inside /opt/project_alpha/docs/, create:
+    *	readme.txt
+*	Inside /opt/project_alpha/secure/, create:
+    *	credentials.txt
+* Use touch command to create the files.
+*Example*
+```
+# Create directory structure
+sudo mkdir -p /opt/project_alpha/{code,docs,secure}
+
+# Create files
+sudo touch /opt/project_alpha/code/app.sh
+sudo touch /opt/project_alpha/docs/readme.txt
+sudo touch /opt/project_alpha/secure/credentials.txt
+
+```
+3. Ownership & Permissions
+* Apply the following rules:
+* /opt/project_alpha	root:alphadev	770	Base directory for the project
+* /opt/project_alpha/code/	dev1:alphadev	770	 ;Dev1 writes code
+* /opt/project_alpha/docs/	dev2:alphadev	774 ;	Dev2 edits docs; readable by all
+* /opt/project_alpha/secure/	root:root	700	;Only root can access credentials
+* credentials.txt	root:root	600;	Confidential file
+* Use chown and chmod to apply these rules.
+*Example*
+```
+# 1. Base project directory
+sudo chown root:alphadev /opt/project_alpha
+sudo chmod 770 /opt/project_alpha
+
+# 2. code/
+sudo chown dev1:alphadev /opt/project_alpha/code
+sudo chmod 770 /opt/project_alpha/code
+sudo chown dev1:alphadev /opt/project_alpha/code/app.sh
+sudo chmod 660 /opt/project_alpha/code/app.sh
+
+# 3. docs/
+sudo chown dev2:alphadev /opt/project_alpha/docs
+sudo chmod 774 /opt/project_alpha/docs
+sudo chown dev2:alphadev /opt/project_alpha/docs/readme.txt
+sudo chmod 664 /opt/project_alpha/docs/readme.txt
+
+# 4. secure/
+sudo chown root:root /opt/project_alpha/secure
+sudo chmod 700 /opt/project_alpha/secure
+sudo chown root:root /opt/project_alpha/secure/credentials.txt
+sudo chmod 600 /opt/project_alpha/secure/credentials.txt
+
+```
+4. Access Testing
+*	Switch to user dev1 and test:
+*	Write to app.sh
+*	Read readme.txt
+*	Try accessing credentials.txt (should be denied)
+*	Switch to user dev2 and test:
+*	Write to readme.txt
+*	Try editing app.sh (should be allowed if group permission is set)
+### Expected Commands to Use
+*	adduser, groupadd, usermod
+*	mkdir, touch
+*	chown, chmod
+*	su - username
+*	ls -l, cat, echo, rm, rmdir
+*Example*
+```
+# To switch users 
+su - dev1
+su - dev2
+
+# As Dev1
+# 1. Write to app.sh
+echo "echo Hello from dev1" >> /opt/project_alpha/code/app.sh
+
+# 2. Read readme.txt
+cat /opt/project_alpha/docs/readme.txt
+
+# 3. Try accessing credentials.txt (should fail)
+cat /opt/project_alpha/secure/credentials.txt
+
+# As Dev2
+# 1. Write to readme.txt
+echo "Updated by dev2" >> /opt/project_alpha/docs/readme.txt
+
+# 2. Try editing app.sh (should succeed if group has write)
+echo "Edited by dev2" >> /opt/project_alpha/code/app.sh
+
+```
+Screenshots to Submit 
+1.	User & group creation (id dev1, groups dev2)
+![alt text](image-1.png)
+2.	ls -l showing permission setup inside /opt/project_alpha
+![alt text](image-2.png)
+3.	File editing attempts as both users
+![alt text](image-3.png)
+![alt text](image-4.png)
+4.	Error on accessing credentials.txt as dev1 or dev2
+![alt text](image-5.png)
