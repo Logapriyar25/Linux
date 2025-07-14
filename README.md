@@ -526,12 +526,7 @@ sudo chmod 600 /opt/project_alpha/secure/credentials.txt
 *	Switch to user dev2 and test:
 *	Write to readme.txt
 *	Try editing app.sh (should be allowed if group permission is set)
-### Expected Commands to Use
-*	adduser, groupadd, usermod
-*	mkdir, touch
-*	chown, chmod
-*	su - username
-*	ls -l, cat, echo, rm, rmdir
+
 *Example*
 ```
 # To switch users 
@@ -556,6 +551,13 @@ echo "Updated by dev2" >> /opt/project_alpha/docs/readme.txt
 echo "Edited by dev2" >> /opt/project_alpha/code/app.sh
 
 ```
+### Expected Commands to Use
+*	adduser, groupadd, usermod
+*	mkdir, touch
+*	chown, chmod
+*	su - username
+*	ls -l, cat, echo, rm, rmdir
+
 Screenshots to Submit 
 1.	User & group creation (id dev1, groups dev2)
 ![alt text](image-1.png)
